@@ -40,7 +40,7 @@ def check_date_hierarchy(line, filename, options):
 
 def check_booleanfield_default(line, filename, options):
     warnings = []
-    if 'BooleanField' in line and 'default' not in line:
+    if 'models.BooleanField' in line and 'default' not in line:
         warnings.append('BooleanField no longer has an implicit default; set an explicit default if one is needed.')
     return warnings, [], []
 
