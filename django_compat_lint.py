@@ -61,7 +61,7 @@ if __name__ == '__main__':
                       default='errors',
                       help="Level of messages to display. 'errors', 'warnings', 'info' or 'all'. Default 'errors'.")
 
-    for rule in RULES:
+    for rule in sorted(RULES, key=lambda x: x['long_option']):
         parser.add_option(rule['long_option'],
                           dest=rule['dest'], action=rule['action'],
                           help=rule['help'])
